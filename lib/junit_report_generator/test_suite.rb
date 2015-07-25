@@ -11,6 +11,7 @@ module JunitReportGenerator
     def add(test_case)
       @test_cases.push(test_case)
       @tests = @test_cases.size
+      self
     end
   end
 end

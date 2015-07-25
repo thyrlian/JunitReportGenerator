@@ -7,9 +7,9 @@ module JunitReportGenerator
         builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
           xml.testsuites() do
             test_suites.each do |test_suite|
-              xml.testsuite(:name => test_suite.name, :tests => test_suite.tests) do
+              xml.testsuite(test_suite.attributes) do
                 test_suite.test_cases.each do |test_case|
-                  xml.testcase(:name => test_case.name) do
+                  xml.testcase(test_case.attributes) do
                     
                   end
                 end

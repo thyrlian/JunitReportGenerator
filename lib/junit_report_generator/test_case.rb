@@ -1,10 +1,14 @@
+require_relative 'elementary'
+
 module JunitReportGenerator
   class TestCase
-    attr_reader :name, :attributes
+    include Elementary
+    
+    attr_reader :name
     
     def initialize(name)
       @name = name
-      @attributes = {:name => @name}
+      assemble_attributes(:name)
     end
   end
 end

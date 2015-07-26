@@ -4,7 +4,7 @@ module JunitReportGenerator
   class TestSuite
     include Elementary
     
-    attr_reader :name, :tests, :test_cases
+    attr_reader :test_cases
     
     def initialize(name)
       @name = name

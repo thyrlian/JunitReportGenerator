@@ -5,8 +5,6 @@ class TestElementary < Minitest::Test
     klass = Class.new do
       include Elementary
       
-      attr_reader :name, :value
-      
       def initialize(name, value)
         @name = name
         @value = value

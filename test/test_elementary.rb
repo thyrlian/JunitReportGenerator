@@ -28,4 +28,9 @@ class TestElementary < Minitest::Test
     @object.change(1024)
     assert_equal({:name => 'foobar', :value => 1024}, @object.attributes)
   end
+  
+  def test_method_missing_add_optional_attribute
+    @object.status('Unknown')
+    assert_equal({:name => 'foobar', :value => 88, :status => 'Unknown'}, @object.attributes)
+  end
 end

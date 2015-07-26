@@ -17,5 +17,14 @@ module JunitReportGenerator
         instance_variable_get(:@attributes)[attr] = instance_variable_get("@#{attr.id2name}")
       end
     end
+    
+    def method_missing(method, *args)
+      instance_variable_get(:@attributes)[method] = args.first
+      self.class.send(:define_method, method) do |value|
+        instance_variable_get(:@attributes)[method] = value
+        self
+      end
+      self
+    end
   end
 end

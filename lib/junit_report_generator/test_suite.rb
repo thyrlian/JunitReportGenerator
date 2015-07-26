@@ -19,5 +19,13 @@ module JunitReportGenerator
       update_attributes(:tests)
       self
     end
+    
+    class << self
+      def create(name)
+        new(name)
+      end
+    end
+    
+    private_class_method :new
   end
 end

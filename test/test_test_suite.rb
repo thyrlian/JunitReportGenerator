@@ -2,7 +2,7 @@ require_relative 'helper'
 
 class TestSuiteTest < Minitest::Test
   def setup
-    @test_suite = TestSuite.new('Sonar')
+    @test_suite = TestSuite.create('Sonar')
   end
   
   def test_empty_test_suite

@@ -8,5 +8,13 @@ module JunitReportGenerator
       @name = name
       assemble_attributes(:name)
     end
+    
+    class << self
+      def create(name)
+        new(name)
+      end
+    end
+    
+    private_class_method :new
   end
 end

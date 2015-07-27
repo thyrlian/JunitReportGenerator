@@ -2,7 +2,7 @@ require_relative 'helper'
 
 class TestElementary < Minitest::Test
   def setup
-    klass = Class.new do
+    @klass = Class.new do
       include Elementary
       
       def initialize(name, value)
@@ -17,7 +17,7 @@ class TestElementary < Minitest::Test
       end
     end
     
-    @object = klass.new('foobar', 88)
+    @object = @klass.new('foobar', 88)
   end
   
   def test_assemble_attributes
@@ -29,8 +29,14 @@ class TestElementary < Minitest::Test
     assert_equal({:name => 'foobar', :value => 1024}, @object.attributes)
   end
   
-  def test_method_missing_add_optional_attribute
+  def test_method_missing_should_add_optional_attribute
     @object.status('Unknown')
     assert_equal({:name => 'foobar', :value => 88, :status => 'Unknown'}, @object.attributes)
+  end
+  
+  def test_method_missing_should_cache_optional_attribute_to_method
+    assert(!@klass.instance_methods.include?(:status))
+    @object.status('Unknown')
+    assert(@klass.instance_methods.include?(:status))
   end
 end

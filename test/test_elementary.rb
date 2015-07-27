@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestElementary < Minitest::Test
+class TestElementary < MiniTest::Unit::TestCase
   def setup
     @klass = Class.new do
       include Elementary

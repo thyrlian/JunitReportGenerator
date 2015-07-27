@@ -10,7 +10,7 @@ class TestSuiteTest < Minitest::Test
   end
   
   def test_add
-    @test_suite.add(mock()).add(mock())
+    @test_suite.add(MiniTest::Mock.new).add(MiniTest::Mock.new)
     assert_equal(2, @test_suite.instance_variable_get(:@tests))
   end
 end

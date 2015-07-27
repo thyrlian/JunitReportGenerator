@@ -4,5 +4,4 @@ gem 'nokogiri'
 
 group :test do
   gem 'rake'
-  gem 'mocha'
 end

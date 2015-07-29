@@ -38,5 +38,6 @@ class TestElementary < MiniTest::Unit::TestCase
     assert(!@klass.instance_methods.include?(:status))
     @object.status('Unknown')
     assert(@klass.instance_methods.include?(:status))
+    assert_equal({:name => 'foobar', :value => 88, :status => 'Unknown'}, @object.attributes)
   end
 end

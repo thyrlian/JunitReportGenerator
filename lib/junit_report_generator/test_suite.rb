@@ -13,8 +13,8 @@ module JunitReportGenerator
       assemble_attributes(:name, :tests)
     end
     
-    def add(test_case)
-      @test_cases.push(test_case)
+    def add(*test_cases)
+      @test_cases += test_cases
       @tests = @test_cases.size
       update_attributes(:tests)
       self

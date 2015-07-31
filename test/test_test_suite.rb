@@ -14,7 +14,12 @@ class TestSuiteTest < MiniTest::Unit::TestCase
     assert_equal(0, @test_suite.instance_variable_get(:@tests))
   end
   
-  def test_add
+  def test_add_by_splatting_arguments
+    @test_suite.add(MiniTest::Mock.new, MiniTest::Mock.new, MiniTest::Mock.new)
+    assert_equal(3, @test_suite.instance_variable_get(:@tests))
+  end
+  
+  def test_add_by_chaining
     @test_suite.add(MiniTest::Mock.new).add(MiniTest::Mock.new)
     assert_equal(2, @test_suite.instance_variable_get(:@tests))
   end

@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestCaseTest < MiniTest::Unit::TestCase
+class TestTestCase < MiniTest::Unit::TestCase
   def setup
     @test_case = TestCase.create('Awesome Test')
   end

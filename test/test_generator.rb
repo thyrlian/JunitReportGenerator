@@ -11,7 +11,6 @@ class TestGenerator < MiniTest::Unit::TestCase
   end
   
   def test_produce
-    puts @doc.testsuites.testsuite.testcase
     assert_equal(3, @doc.testsuites.testsuite.testcase.size)
     assert_equal('testLoginWithWrongCredentials', @doc.testsuites.testsuite.testcase.last['name'])
     assert_equal('LoginActivityTest', @doc.testsuites.testsuite.testcase.last['classname'])

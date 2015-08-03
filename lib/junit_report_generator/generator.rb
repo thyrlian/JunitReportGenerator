@@ -9,9 +9,7 @@ module JunitReportGenerator
             test_suites.each do |test_suite|
               xml.testsuite(test_suite.attributes) do
                 test_suite.test_cases.each do |test_case|
-                  xml.testcase(test_case.attributes) do
-                    
-                  end
+                  xml.testcase(test_case.attributes)
                 end
               end
             end

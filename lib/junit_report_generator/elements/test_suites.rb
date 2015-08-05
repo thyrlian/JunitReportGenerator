@@ -1,19 +1,12 @@
 require_relative '../elementary'
+require_relative '../containable'
 
 module JunitReportGenerator
   class TestSuites
     include Elementary
-    
-    attr_reader :test_suites
+    include Containable
     
     def initialize
-      @test_suites = []
-    end
-    
-    def add(*test_suites)
-      @test_suites += test_suites
-      @test_suites.uniq!
-      self
     end
     
     class << self

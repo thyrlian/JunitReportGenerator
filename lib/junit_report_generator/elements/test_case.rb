@@ -1,4 +1,4 @@
-require_relative 'elementary'
+require_relative '../elementary'
 
 module JunitReportGenerator
   class TestCase

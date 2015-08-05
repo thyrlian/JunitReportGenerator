@@ -3,10 +3,10 @@ require 'nokogiri'
 module JunitReportGenerator
   class Generator
     class << self
-      def produce(*test_suites)
+      def produce(test_suites)
         builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
-          xml.testsuites() do
-            test_suites.each do |test_suite|
+          xml.testsuites(test_suites.attributes) do
+            test_suites.test_suites.each do |test_suite|
               xml.testsuite(test_suite.attributes) do
                 test_suite.test_cases.each do |test_case|
                   xml.testcase(test_case.attributes)

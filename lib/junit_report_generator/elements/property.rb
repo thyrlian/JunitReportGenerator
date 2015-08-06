@@ -1,18 +1,6 @@
-require_relative '../elementary'
+require_relative 'element'
 
 module JunitReportGenerator
-  class Property
-    include Elementary
-    
-    def initialize
-    end
-    
-    class << self
-      def create
-        new
-      end
-    end
-    
-    private_class_method :new
+  class Property < Element
   end
 end

@@ -1,18 +1,6 @@
-require_relative '../elementary'
+require_relative 'element'
 
 module JunitReportGenerator
-  class Failure
-    include Elementary
-    
-    def initialize
-    end
-    
-    class << self
-      def create
-        new
-      end
-    end
-    
-    private_class_method :new
+  class Failure < Element
   end
 end

@@ -1,9 +1,8 @@
-require_relative '../elementary'
+require_relative 'element'
 require_relative '../containable'
 
 module JunitReportGenerator
-  class TestSuite
-    include Elementary
+  class TestSuite < Element
     include Containable
     
     def initialize(name)
@@ -15,13 +14,5 @@ module JunitReportGenerator
         update_attributes(:tests)
       end
     end
-    
-    class << self
-      def create(name)
-        new(name)
-      end
-    end
-    
-    private_class_method :new
   end
 end

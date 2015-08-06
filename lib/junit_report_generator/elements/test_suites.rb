@@ -7,6 +7,7 @@ module JunitReportGenerator
     include Containable
     
     def initialize
+      register
     end
     
     class << self

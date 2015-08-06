@@ -1,9 +1,8 @@
 require_relative 'element'
-require_relative '../containable'
 
 module JunitReportGenerator
   class TestSuite < Element
-    include Containable
+    include_containable
     
     def initialize(name)
       @name = name

@@ -1,4 +1,5 @@
 require_relative '../elementary'
+require_relative '../containable'
 
 module JunitReportGenerator
   class Element
@@ -8,8 +9,12 @@ module JunitReportGenerator
       def create(*args)
         new(*args)
       end
+      
+      def include_containable
+        include Containable
+      end
     end
     
-    private_class_method :new
+    private_class_method :new, :include_containable
   end
 end

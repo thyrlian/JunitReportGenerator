@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestElement < MiniTest::Unit::TestCase
+class TestElement < Minitest::Test
   def setup
     @klass = Class.new(Element) do
     end

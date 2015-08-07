@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestGenerator < MiniTest::Unit::TestCase
+class TestGenerator < Minitest::Test
   def setup
     test_suites = TestSuites.create
     test_suite = TestSuite.create('UI-Tests')

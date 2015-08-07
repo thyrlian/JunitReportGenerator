@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestContainable < MiniTest::Unit::TestCase
+class TestContainable < Minitest::Test
   def setup
     @klass_without_register = Class.new do
       include Containable

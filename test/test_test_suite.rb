@@ -1,6 +1,6 @@
 require_relative 'helper'
 
-class TestTestSuite < MiniTest::Unit::TestCase
+class TestTestSuite < Minitest::Test
   def setup
     @test_suite = TestSuite.create('Sonar')
     @test_case_1 = MiniTest::Mock.new

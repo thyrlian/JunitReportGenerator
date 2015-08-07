@@ -40,4 +40,10 @@ class TestElement < MiniTest::Unit::TestCase
     @klass.send(:include_containable)
     assert(@klass.ancestors.include?(JunitReportGenerator::Containable))
   end
+  
+  def test_xml_tag_name
+    assert_raises NotImplementedError do
+      @klass.xml_tag_name
+    end
+  end
 end

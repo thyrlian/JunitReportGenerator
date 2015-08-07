@@ -35,4 +35,8 @@ class TestTestSuite < MiniTest::Unit::TestCase
     @test_suite.add(@test_case_1).add(@test_case_2)
     assert_equal(2, @test_suite.instance_variable_get(:@tests))
   end
+  
+  def test_xml_tag_name
+    assert_equal('testsuite', TestSuite.xml_tag_name)
+  end
 end

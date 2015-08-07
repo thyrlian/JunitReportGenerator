@@ -13,6 +13,10 @@ module JunitReportGenerator
       def include_containable
         include Containable
       end
+      
+      def xml_tag_name
+        raise(NotImplementedError, "Abstract method [#{__method__}] is called, please implement", caller)
+      end
     end
     
     private_class_method :new, :include_containable

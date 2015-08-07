@@ -6,5 +6,11 @@ module JunitReportGenerator
       @name = name
       assemble_attributes(:name)
     end
+    
+    class << self
+      def xml_tag_name
+        'testcase'
+      end
+    end
   end
 end

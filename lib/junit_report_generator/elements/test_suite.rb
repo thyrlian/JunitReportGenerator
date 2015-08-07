@@ -13,5 +13,11 @@ module JunitReportGenerator
         update_attributes(:tests)
       end
     end
+    
+    class << self
+      def xml_tag_name
+        'testsuite'
+      end
+    end
   end
 end

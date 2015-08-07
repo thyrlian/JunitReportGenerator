@@ -7,5 +7,11 @@ module JunitReportGenerator
     def initialize
       register
     end
+    
+    class << self
+      def xml_tag_name
+        'testsuites'
+      end
+    end
   end
 end

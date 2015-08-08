@@ -11,6 +11,7 @@ class TestTestSuite < Minitest::Test
   def test_create
     assert_equal('Sonar', @test_suite.instance_variable_get(:@name))
     assert_equal({:name => 'Sonar', :tests => 0}, @test_suite.attributes)
+    assert_equal([], @test_suite.sub_elements)
   end
   
   def test_empty_test_suite

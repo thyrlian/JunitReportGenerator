@@ -5,7 +5,20 @@ module JunitReportGenerator
     include_containable
     
     def initialize
-      register
+      @tests = 0
+      @errors = 0
+      @failures = 0
+      @disabled = 0
+      assemble_attributes(:tests, :errors, :failures, :disabled)
+      register do |sub_elements|
+        sub_elements.each do |sub_element|
+          @tests += sub_element.attributes.fetch(:tests, 0)
+          @errors += sub_element.attributes.fetch(:errors, 0)
+          @failures += sub_element.attributes.fetch(:failures, 0)
+          @disabled += sub_element.attributes.fetch(:disabled, 0)
+        end
+        update_attributes(:tests, :errors, :failures, :disabled)
+      end
     end
     
     class << self

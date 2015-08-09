@@ -28,29 +28,16 @@ class TestContainable < Minitest::Test
   end
   
   def test_add_by_splatting_arguments
-    2.times do
-      @sub_element_1.expect(:is_a?, true, [TestCase])
-      @sub_element_2.expect(:is_a?, true, [TestCase])
-      @sub_element_3.expect(:is_a?, true, [TestCase])
-    end
     @object_without_register.add(@sub_element_1, @sub_element_2, @sub_element_3)
     assert_equal(3, @object_without_register.sub_elements.size)
   end
   
   def test_add_by_chaining
-    2.times do
-      @sub_element_1.expect(:is_a?, true, [TestCase])
-      @sub_element_2.expect(:is_a?, true, [TestCase])
-    end
     @object_without_register.add(@sub_element_1).add(@sub_element_2)
     assert_equal(2, @object_without_register.sub_elements.size)
   end
   
   def test_register_with_block
-    2.times do
-      @sub_element_1.expect(:is_a?, true, [TestCase])
-      @sub_element_2.expect(:is_a?, true, [TestCase])
-    end
     assert_equal(0, @object_with_register.count)
     @object_with_register.add(@sub_element_1).add(@sub_element_2)
     assert_equal(2, @object_with_register.count)

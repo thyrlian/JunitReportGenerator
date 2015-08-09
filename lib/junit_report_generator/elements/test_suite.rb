@@ -9,9 +9,9 @@ module JunitReportGenerator
       @name = name
       @tests = 0
       assemble_attributes(:name, :tests)
-      register do
-        @tests = @sub_elements.inject(0) do |sum, sub_element|
-          sub_element.is_a?(TestCase) ? sum += 1 : sum
+      register do |sub_elements|
+        sub_elements.each do |sub_element|
+          @tests += 1 if sub_element.is_a?(TestCase)
         end
         update_attributes(:tests)
       end

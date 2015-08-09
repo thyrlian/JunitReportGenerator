@@ -9,8 +9,8 @@ module JunitReportGenerator
     
     def add(*sub_elements)
       @sub_elements ||= []
-      @sub_elements.concat(sub_elements).uniq!
-      @blk.call if defined?(@blk) && @blk
+      @sub_elements.concat(sub_elements)
+      @blk.call(sub_elements) if defined?(@blk) && @blk
       self
     end
     

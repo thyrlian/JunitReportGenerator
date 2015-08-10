@@ -30,6 +30,8 @@ test_suites = TestSuites.create.add(test_suite_1, test_suite_2)
 
 Report.on(test_suites).publish('[path_of_output_xml_test_results]')
 ```
+## Reference
+[JUnit test reports specification](https://svn.jenkins-ci.org/trunk/hudson/dtkit/dtkit-format/dtkit-junit-model/src/main/resources/com/thalesgroup/dtkit/junit/model/xsd/)
 
 ## License
 

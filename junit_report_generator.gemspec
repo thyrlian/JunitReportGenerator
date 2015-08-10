@@ -15,9 +15,8 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n")
   s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.homepage    = 'https://github.com/thyrlian/JunitReportGenerator'
-  
-  spec.add_dependency 'nokogiri', '>= 1.6.6.2'
-  spec.add_development_dependency 'rake', '~> 10.4.2'
-  spec.add_development_dependency 'minitest', '~> 5.7.0'
-  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.4.7'
+  s.add_dependency 'nokogiri', '>= 1.6.6.2'
+  s.add_development_dependency 'rake', '~> 10.4.2'
+  s.add_development_dependency 'minitest', '~> 5.7.0'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4.7'
 end

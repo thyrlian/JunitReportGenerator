@@ -90,6 +90,6 @@ class TestTestSuite < Minitest::Test
     assert_equal(2, @test_suite.attributes[:errors])
     assert_equal(3, @test_suite.attributes[:failures])
     assert_equal(1, @test_suite.attributes[:skipped])
-    assert_in_delta(1234.56789, @test_suite.attributes[:time])
+    assert_in_delta(1234.56789, @test_suite.attributes[:time], 0.000001)
   end
 end

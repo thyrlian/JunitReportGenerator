@@ -14,10 +14,10 @@ module JunitReportGenerator
       register do |sub_elements|
         sub_elements.each do |sub_element|
           attributes = sub_element.attributes
-          @tests += attributes.fetch(:tests, 0)
-          @errors += attributes.fetch(:errors, 0)
-          @failures += attributes.fetch(:failures, 0)
-          @disabled += attributes.fetch(:disabled, 0)
+          @tests += attributes.fetch(:tests, 0).to_i
+          @errors += attributes.fetch(:errors, 0).to_i
+          @failures += attributes.fetch(:failures, 0).to_i
+          @disabled += attributes.fetch(:disabled, 0).to_i
           @time += attributes.fetch(:time, 0).to_f
         end
         update_attributes(:tests, :errors, :failures, :disabled, :time)

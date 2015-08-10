@@ -48,6 +48,13 @@ TestCase.create('test').add(Error.create)    # Error
 TestCase.create('test').add(Skipped.create)  # Skipped
 ```
 
+## Notes
+The statistics attributes in testsuite(s) are not really used by Jenkins (they are optional), in fact, Jenkins is doing the math by itself via counting the numbers from each testcase.
+```xml
+<!-- these attributes are optional -->
+<testsuite name="foobar" tests="10" errors="3" failures="2" skipped="1" time="12.34">
+```
+
 ## Reference
 [JUnit test reports specification](https://svn.jenkins-ci.org/trunk/hudson/dtkit/dtkit-format/dtkit-junit-model/src/main/resources/com/thalesgroup/dtkit/junit/model/xsd/)
 

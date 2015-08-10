@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version     = JunitReportGenerator::VERSION
   s.license     = 'MIT'
   s.date        = '2015-08-11'
-  s.summary     = 'Easy and flexible solution to generating JUnit test result report from any format of data.'
-  s.description = 'Easy and flexible solution to generating JUnit test result report from any format of data.'
+  s.summary     = 'Generating JUnit test report easily from any source.'
+  s.description = 'Generating JUnit test result report (xml) from any format of data by super easy and flexible syntax.  Most of the CIs (Continuous Integration) can aggregate JUnit style reports with zero effort.'
   s.authors     = ['Jing Li']
   s.email       = ['thyrlian@gmail.com']
   s.files       = `git ls-files`.split("\n")

@@ -7,7 +7,29 @@
 Easy and flexible solution to generating JUnit test result report from any format of data.
 
 ## Usage
+Install the library
+```shell
+gem install junit_report_generator
+```
 
+Example code snippets
+```ruby
+require 'junit_report_generator'
+
+include JunitReportGenerator
+
+test_suite_1 = TestSuite.create('Test Suite 1')
+# you can add all at once
+test_suite_1.add(TestCase.create('Test Case'), TestCase.create('Test Case'))
+
+test_suite_2 = TestSuite.create('Test Suite 2')
+# or chaining add methods one after another
+test_suite_2.add(TestCase.create('Test Case')).add(TestCase.create('Test Case'))
+
+test_suites = TestSuites.create.add(test_suite_1, test_suite_2)
+
+Report.on(test_suites).publish('[path_of_output_xml_test_results]')
+```
 
 ## License
 

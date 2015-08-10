@@ -30,6 +30,17 @@ test_suites = TestSuites.create.add(test_suite_1, test_suite_2)
 
 Report.on(test_suites).publish('[path_of_output_xml_test_results]')
 ```
+
+## Syntax
+* Add sub-elements to test case / suite(s)
+```ruby
+TestCase.create('test').add(sub_element_1, sub_element_2).add(sub_element_3)
+```
+* Add attribute(s) to any xml element (attribute methods are dynamically defined)
+```ruby
+TestCase.create('test').attribute('value').whatever_you_want('foo')
+```
+
 ## Reference
 [JUnit test reports specification](https://svn.jenkins-ci.org/trunk/hudson/dtkit/dtkit-format/dtkit-junit-model/src/main/resources/com/thalesgroup/dtkit/junit/model/xsd/)
 

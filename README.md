@@ -40,6 +40,13 @@ TestCase.create('test').add(sub_element_1, sub_element_2).add(sub_element_3)
 ```ruby
 TestCase.create('test').attribute('value').whatever_you_want('foo')
 ```
+* Test case result format: Pass, Failure, Error, Skipped.
+```ruby
+TestCase.create('test')                      # Pass: no sub-element
+TestCase.create('test').add(Failure.create)  # Failure
+TestCase.create('test').add(Error.create)    # Error
+TestCase.create('test').add(Skipped.create)  # Skipped
+```
 
 ## Reference
 [JUnit test reports specification](https://svn.jenkins-ci.org/trunk/hudson/dtkit/dtkit-format/dtkit-junit-model/src/main/resources/com/thalesgroup/dtkit/junit/model/xsd/)

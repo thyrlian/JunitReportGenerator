@@ -1,11 +1,8 @@
 # encoding: utf-8
 
-$: << File.expand_path('../lib', __FILE__)
-require 'junit_report_generator'
-
 Gem::Specification.new do |s|
   s.name        = 'junit_report_generator'
-  s.version     = JunitReportGenerator::VERSION
+  s.version     = '1.0.1'
   s.license     = 'MIT'
   s.date        = '2015-08-11'
   s.summary     = 'Generating JUnit test report easily from any source.'

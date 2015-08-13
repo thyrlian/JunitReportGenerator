@@ -11,6 +11,7 @@ class TestElement < Minitest::Test
       def initialize(name, value)
         @name = name
         @value = value
+        assemble_attributes(:name, :value)
       end
     end
   end
@@ -45,5 +46,15 @@ class TestElement < Minitest::Test
     assert_raises NotImplementedError do
       @klass.xml_tag_name
     end
+  end
+  
+  def test_attributes_is_initialized
+    obj = @klass.create
+    assert_equal({}, obj.attributes)
+  end
+  
+  def test_attributes_is_not_reset
+    obj = @klass_with_constructor.create('AwesomeTest', 23)
+    assert_equal({:name => 'AwesomeTest', :value => 23}, obj.attributes)
   end
 end

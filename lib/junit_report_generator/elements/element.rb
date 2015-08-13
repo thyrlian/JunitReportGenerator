@@ -7,7 +7,9 @@ module JunitReportGenerator
     
     class << self
       def create(*args)
-        new(*args)
+        obj = new(*args)
+        obj.instance_variable_set(:@attributes, {}) unless obj.attributes
+        obj
       end
       
       def include_containable

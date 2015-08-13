@@ -49,6 +49,9 @@ TestCase.create('test').add(Error.create)    # Error
 TestCase.create('test').add(Skipped.create)  # Skipped
 ```
 
+## Utilization
+Jenkins -> Job -> Configure -> Post-build Actions -> Add post-build action -> Publish JUnit test result report -> Test report XMLs
+
 ## Notes
 The statistics attributes in testsuite(s) are not really used by Jenkins (they are optional), in fact, Jenkins is doing the math by itself via counting the numbers from each testcase.
 ```xml

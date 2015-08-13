@@ -45,4 +45,13 @@ class TestElementary < Minitest::Test
     assert(@klass_with_dflt_attrs.instance_methods.include?(:status))
     assert(({:name => 'foobar', :value => 88, :status => 'Unknown'}.to_a - @obj_with_dflt_attrs.attributes.to_a).empty?)
   end
+  
+  def test_attributes_is_nil_before_initialization
+    assert_nil(@obj_without_dflt_attrs.attributes)
+  end
+  
+  def test_attributes_is_set_after_initialization
+    @obj_without_dflt_attrs.send(:initialize_attributes_if_not_yet)
+    assert_equal({}, @obj_without_dflt_attrs.attributes)
+  end
 end

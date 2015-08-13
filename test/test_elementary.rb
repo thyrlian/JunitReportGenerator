@@ -43,6 +43,6 @@ class TestElementary < Minitest::Test
     assert(!@klass_with_dflt_attrs.instance_methods.include?(:status))
     @obj_with_dflt_attrs.status('Unknown')
     assert(@klass_with_dflt_attrs.instance_methods.include?(:status))
-    assert_equal({:name => 'foobar', :value => 88, :status => 'Unknown'}, @obj_with_dflt_attrs.attributes)
+    assert(({:name => 'foobar', :value => 88, :status => 'Unknown'}.to_a - @obj_with_dflt_attrs.attributes.to_a).empty?)
   end
 end

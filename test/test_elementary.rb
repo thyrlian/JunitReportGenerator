@@ -54,4 +54,14 @@ class TestElementary < Minitest::Test
     @obj_without_dflt_attrs.send(:initialize_attributes_if_not_yet)
     assert_equal({}, @obj_without_dflt_attrs.attributes)
   end
+  
+  def test_attributes_is_assured_initialized_in_update_attributes
+    @obj_without_dflt_attrs.update_attributes(:status)
+    assert_equal({:status => nil}, @obj_without_dflt_attrs.attributes)
+  end
+  
+  def test_attributes_is_assured_initialized_in_method_missing
+    @obj_without_dflt_attrs.send(:method_missing, :status, 'Good')
+    assert_equal({:status => 'Good'}, @obj_without_dflt_attrs.attributes)
+  end
 end

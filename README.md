@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/junit_report_generator.svg)](http://badge.fury.io/rb/junit_report_generator)
 [![Build Status](https://travis-ci.org/thyrlian/JunitReportGenerator.svg?branch=master)](https://travis-ci.org/thyrlian/JunitReportGenerator)
 [![Code Climate](https://codeclimate.com/github/thyrlian/JunitReportGenerator/badges/gpa.svg)](https://codeclimate.com/github/thyrlian/JunitReportGenerator)
-[![Test Coverage](https://codeclimate.com/github/thyrlian/JunitReportGenerator/badges/coverage.svg)](https://codeclimate.com/github/thyrlian/JunitReportGenerator/coverage)
+[![Coverage Status](https://coveralls.io/repos/thyrlian/JunitReportGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/thyrlian/JunitReportGenerator?branch=master)
 
 Easy and flexible solution to generating JUnit test result report from any format of data.
 

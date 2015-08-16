@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/thyrlian/JunitReportGenerator.svg?branch=master)](https://travis-ci.org/thyrlian/JunitReportGenerator)
 [![Code Climate](https://codeclimate.com/github/thyrlian/JunitReportGenerator/badges/gpa.svg)](https://codeclimate.com/github/thyrlian/JunitReportGenerator)
 [![Coverage Status](https://coveralls.io/repos/thyrlian/JunitReportGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/thyrlian/JunitReportGenerator?branch=master)
+[![Dependency Status](https://gemnasium.com/thyrlian/JunitReportGenerator.svg)](https://gemnasium.com/thyrlian/JunitReportGenerator)
 
 Easy and flexible solution to generating JUnit test result report from any format of data.
 

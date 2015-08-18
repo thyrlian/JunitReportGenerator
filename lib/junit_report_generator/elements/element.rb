@@ -17,7 +17,7 @@ module JunitReportGenerator
       end
 
       def xml_tag_name
-        raise(NotImplementedError, "Abstract method [#{__method__}] is called, please implement", caller)
+        fail(NotImplementedError, "Abstract method [#{__method__}] is called, please implement", caller)
       end
     end
 

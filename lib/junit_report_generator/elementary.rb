@@ -31,9 +31,7 @@ module JunitReportGenerator
     end
 
     def initialize_attributes_if_not_yet
-      unless instance_variable_get(:@attributes)
-        instance_variable_set(:@attributes, {})
-      end
+      instance_variable_set(:@attributes, {}) unless instance_variable_get(:@attributes)
     end
 
     private :initialize_attributes_if_not_yet

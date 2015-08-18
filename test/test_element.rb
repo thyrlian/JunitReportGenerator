@@ -55,6 +55,6 @@ class TestElement < Minitest::Test
 
   def test_attributes_is_not_reset
     obj = @klass_with_constructor.create('AwesomeTest', 23)
-    assert_equal({:name => 'AwesomeTest', :value => 23}, obj.attributes)
+    assert_equal({ :name => 'AwesomeTest', :value => 23 }, obj.attributes)
   end
 end

@@ -21,7 +21,7 @@ module JunitReportGenerator
           if sub_element.is_a?(TestCase)
             @tests += 1
             @time += sub_element.attributes.fetch(:time, 0).to_f
-            class_types = sub_element.sub_elements.map { |x| x.class }
+            class_types = sub_element.sub_elements.map(&:class)
             @errors += 1 if class_types.include?(Error)
             @failures += 1 if class_types.include?(Failure)
             @skipped += 1 if class_types.include?(Skipped)

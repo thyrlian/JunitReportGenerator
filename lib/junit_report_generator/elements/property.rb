@@ -7,7 +7,7 @@ module JunitReportGenerator
       @value = value
       assemble_attributes(:name, :value)
     end
-    
+
     class << self
       def xml_tag_name
         'property'

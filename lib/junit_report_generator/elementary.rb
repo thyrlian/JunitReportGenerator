@@ -1,7 +1,7 @@
 module JunitReportGenerator
   module Elementary
     attr_reader :attributes
-    
+
     def assemble_attributes(*attrs)
       attributes = {}
       attrs.each do |attr|
@@ -10,7 +10,7 @@ module JunitReportGenerator
       end
       instance_variable_set(:@attributes, attributes)
     end
-    
+
     def update_attributes(*attrs)
       initialize_attributes_if_not_yet
       attrs.each do |attr|
@@ -18,7 +18,7 @@ module JunitReportGenerator
         instance_variable_get(:@attributes)[attr] = instance_variable_get("@#{attr.id2name}")
       end
     end
-    
+
     def method_missing(method, *args)
       initialize_attributes_if_not_yet
       instance_variable_get(:@attributes)[method] = args.first
@@ -29,13 +29,13 @@ module JunitReportGenerator
       end
       self
     end
-    
+
     def initialize_attributes_if_not_yet
       unless instance_variable_get(:@attributes)
         instance_variable_set(:@attributes, {})
       end
     end
-    
+
     private :initialize_attributes_if_not_yet
   end
 end

@@ -5,7 +5,7 @@ class TestProperties < Minitest::Test
     properties = Properties.create
     assert_equal([], properties.sub_elements)
   end
-  
+
   def test_xml_tag_name
     assert_equal('properties', Properties.xml_tag_name)
   end

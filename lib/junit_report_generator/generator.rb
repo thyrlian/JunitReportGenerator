@@ -9,7 +9,7 @@ module JunitReportGenerator
         end
         builder.to_xml
       end
-      
+
       def build_tags(xml, element)
         tag_name = element.class.xml_tag_name
         xml.send(tag_name, element.attributes) do
@@ -21,7 +21,7 @@ module JunitReportGenerator
         end
       end
     end
-    
+
     private_class_method :new, :build_tags
   end
 end

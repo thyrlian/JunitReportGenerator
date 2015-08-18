@@ -6,12 +6,12 @@ class TestReport < Minitest::Test
     @report = Report.on(@test_suites)
     @file = MiniTest::Mock.new
   end
-  
+
   def test_on
     @test_suites.expect(:==, true, [@test_suites])
     assert_equal(@test_suites, @report.instance_variable_get(:@test_suites))
   end
-  
+
   def test_publish
     xml = 'Pseudo XML'
     Generator.stub(:produce, xml) do

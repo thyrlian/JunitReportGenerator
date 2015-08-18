@@ -7,7 +7,7 @@ class TestTestCase < Minitest::Test
     assert_equal({:name => 'Awesome Test'}, test_case.attributes)
     assert_equal([], test_case.sub_elements)
   end
-  
+
   def test_xml_tag_name
     assert_equal('testcase', TestCase.xml_tag_name)
   end

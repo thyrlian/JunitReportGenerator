@@ -7,7 +7,7 @@ require_relative 'skipped'
 module JunitReportGenerator
   class TestSuite < Element
     include_containable
-    
+
     def initialize(name)
       @name = name
       @tests = 0
@@ -30,7 +30,7 @@ module JunitReportGenerator
         update_attributes(:tests, :errors, :failures, :skipped, :time)
       end
     end
-    
+
     class << self
       def xml_tag_name
         'testsuite'

@@ -3,7 +3,7 @@ require_relative 'element'
 module JunitReportGenerator
   class TestSuites < Element
     include_containable
-    
+
     def initialize
       @tests = 0
       @errors = 0
@@ -23,7 +23,7 @@ module JunitReportGenerator
         update_attributes(:tests, :errors, :failures, :disabled, :time)
       end
     end
-    
+
     class << self
       def xml_tag_name
         'testsuites'

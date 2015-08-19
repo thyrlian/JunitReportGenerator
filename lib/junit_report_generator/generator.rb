@@ -4,7 +4,7 @@ module JunitReportGenerator
   class Generator
     class << self
       def produce(test_suites)
-        builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
+        builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
           build_tags(xml, test_suites)
         end
         builder.to_xml

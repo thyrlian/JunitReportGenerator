@@ -18,9 +18,10 @@ class TestGenerator < Minitest::Test
   end
 
   def test_build_tags_without_recursion
-    xml = Nokogiri::XML::Builder.new do |xml|
+    builder = Nokogiri::XML::Builder.new do |xml|
       Generator.send(:build_tags, xml, TestSuites.create)
-    end.to_xml
+    end
+    xml = builder.to_xml
 
     assert(Nokogiri::XML(xml).xpath('//testsuites').children.empty?)
   end
@@ -33,9 +34,10 @@ class TestGenerator < Minitest::Test
       .add(TestCase.create('testLoginWithWrongCredentials').classname('LoginActivityTest').time('6.691'))
     test_suites.add(test_suite)
 
-    xml = Nokogiri::XML::Builder.new do |xml|
+    builder = Nokogiri::XML::Builder.new do |xml|
       Generator.send(:build_tags, xml, test_suites)
-    end.to_xml
+    end
+    xml = builder.to_xml
 
     assert(!Nokogiri::XML(xml).xpath('//testsuites').children.empty?)
     assert_equal(3, Nokogiri::XML(xml).xpath('//testcase').size)

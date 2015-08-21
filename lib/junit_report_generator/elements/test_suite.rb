@@ -25,8 +25,6 @@ module JunitReportGenerator
             @errors += 1 if class_types.include?(Error)
             @failures += 1 if class_types.include?(Failure)
             @skipped += 1 if class_types.include?(Skipped)
-          else
-            next
           end
         end
         update_attributes(:tests, :errors, :failures, :skipped, :time)

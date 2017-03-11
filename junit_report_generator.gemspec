@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.homepage    = 'https://github.com/thyrlian/JunitReportGenerator'
   s.required_ruby_version = '~> 2.0'
-  s.add_dependency 'nokogiri', '~> 1.7'
+  s.add_dependency 'nokogiri', '~> 1.6.8'
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'minitest', '~> 5.10.1'
   s.add_development_dependency 'coveralls', '~> 0.8.19'

@@ -8,6 +8,7 @@ class TestReport < Minitest::Test
   end
 
   def test_on
+    @test_suites.expect(:nil?, false)
     @test_suites.expect(:==, true, [@test_suites])
     assert_equal(@test_suites, @report.instance_variable_get(:@test_suites))
   end

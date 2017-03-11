@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/thyrlian/JunitReportGenerator'
   s.required_ruby_version = '~> 2.0'
   s.add_dependency 'nokogiri', '~> 1.7'
-  s.add_development_dependency 'rake', '~> 10.4'
-  s.add_development_dependency 'minitest', '~> 5.7'
-  s.add_development_dependency 'coveralls', '~> 0.8.2'
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4.7'
+  s.add_development_dependency 'rake', '~> 12.0'
+  s.add_development_dependency 'minitest', '~> 5.10.1'
+  s.add_development_dependency 'coveralls', '~> 0.8.19'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0.7'
 end

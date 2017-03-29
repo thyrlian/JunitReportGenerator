@@ -22,11 +22,19 @@ include JunitReportGenerator
 
 test_suite_1 = TestSuite.create('Test Suite 1')
 # you can add all at once
-test_suite_1.add(TestCase.create('Test Case'), TestCase.create('Test Case'))
+test_suite_1.add(TestCase.create('Test Case 1-1'), TestCase.create('Test Case 1-2'))
 
 test_suite_2 = TestSuite.create('Test Suite 2')
 # or chaining add methods one after another
-test_suite_2.add(TestCase.create('Test Case')).add(TestCase.create('Test Case'))
+test_suite_2.add(TestCase.create('Test Case 2-1')).add(TestCase.create('Test Case 2-2'))
+
+test_suite_2.add(TestCase.create('A normal test case with time').time('0.03s'))
+test_suite_2.add(TestCase.create('A failed test case with time').add(Failure.create).time('0.05s'))
+test_suite_2.add(TestCase.create('A failed test case without time').add(Failure.create))
+test_suite_2.add(TestCase.create('A test case in error state').add(Error.create))
+test_suite_2.add(TestCase.create('A skipped test case').add(Skipped.create))
+test_suite_2.add(TestCase.create('A test case with unknown status').status('Unknown').time('0.9s'))
+test_suite_2.add(TestCase.create('A test case with classname').time('0.3s').classname('StringUtils'))
 
 test_suites = TestSuites.create.add(test_suite_1, test_suite_2)
 

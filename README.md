@@ -8,6 +8,7 @@
 Easy and flexible solution to generating JUnit test result report from any format of data.
 
 ## Usage
+
 Install the library
 ```shell
 gem install junit_report_generator
@@ -41,6 +42,7 @@ Report.on(test_suites).publish('[path_of_output_xml_test_results]')
 ```
 
 ## Syntax
+
 * Add sub-elements to test case / suite(s)
 ```ruby
 TestCase.create('test').add(sub_element_1, sub_element_2).add(sub_element_3)
@@ -58,21 +60,20 @@ TestCase.create('test').add(Skipped.create)  # Skipped
 ```
 
 ## Utilization
+
 Jenkins -> Job -> Configure -> Post-build Actions -> Add post-build action -> Publish JUnit test result report -> Test report XMLs
 
 ## Notes
+
 The statistics attributes in testsuite(s) are not really used by Jenkins (they are optional), in fact, Jenkins is doing the math by itself via counting the numbers from each testcase.
 ```xml
 <!-- these attributes are optional -->
 <testsuite name="foobar" tests="10" errors="3" failures="2" skipped="1" time="12.34">
 ```
 
-## Reference
-[JUnit test reports specification](https://svn.jenkins-ci.org/trunk/hudson/dtkit/dtkit-format/dtkit-junit-model/src/main/resources/com/thalesgroup/dtkit/junit/model/xsd/)
-
 ## License
 
-Copyright (c) 2015-2017 Jing Li
+Copyright (c) 2015-2019 Jing Li
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'junit_report_generator'
-  s.version     = '1.0.4'
+  s.version     = '1.0.5'
   s.license     = 'MIT'
   s.date        = '2019-09-22'
   s.summary     = 'Generating JUnit test report easily from any source.'
